@@ -3,20 +3,22 @@ import {
     AiOutlineMenu,
     AiOutlineSearch,
     AiOutlineClose,
-    AiFillFilter
 } from 'react-icons/ai';
-import { BsFillCartFill } from "react-icons/bs";
+import { BsFillCartFill, BsPerson } from "react-icons/bs";
+import { FaUserFriends, FaGoogleWallet } from "react-icons/fa";
+import { TbTruckReturn } from "react-icons/tb"
+import { MdHelp, MdOutlineFavorite } from "react-icons/md"
 
 const TopNav = () => {
     let [sideNav, setSidenav] = useState(false);
     return (
-        <div className='max-w-{1520} mx-auto flex justify-between items-center p-4'>
+        <div className='max-w-[1520px] mx-auto flex justify-between items-center p-4'>
             <div className='flex items-center'>
                 <div className='cursor-pointer'>
                     <AiOutlineMenu onClick={() => setSidenav(!sideNav)} size={25} />
                 </div>
                 <h1 className='text-2xl sm:text-3xl lg:text-4xl px-2'>Yum
-                    <span>Eats</span>
+                    <span className='font-bold'>Eats</span>
                 </h1>
                 <div
                     className='hidden lg:flex items-center bg-gray-200 rounded-full p-1 text-[14px]'>
@@ -36,7 +38,7 @@ const TopNav = () => {
             </button>
             {
                 sideNav ? (
-                    <div className='bg-black/60 fixed w-full h-screen z-10 top-0 left-0'></div>
+                    <div className='bg-black/60 fixed w-full h-screen z-10 top-0 left-0' onClick={() => setSidenav(false)}></div>
                 ) : ('')
             }
             <div className={
@@ -45,7 +47,34 @@ const TopNav = () => {
                     : 'fixed top-0 left-[-100%] w-[300px] h-screen bg-white z-10 duration-300'
             }
             >
-                <AiOutlineClose onClick={() => setSidenav(false)} size={25} className='absolute top-4 right-4 cursor-pointer' /></div>
+                <AiOutlineClose onClick={() => setSidenav(false)} size={25} className='absolute top-4 right-4 cursor-pointer' />
+                <h2 className='text-2xl p-4'>Yum <span className='text-orange-700 font-bold'>Eat</span>
+                    <nav>
+                        <ul className='flex flex-col p-4 text-gray-900'>
+                            <li className='text-xl py-4 flex'>
+                                <BsPerson size={25} className='mr-4 text-white bg-black rounded-full' />
+                                My Account
+                            </li>
+                            <li className='text-xl py-4 flex'>
+                                <TbTruckReturn size={25} className='mr-4 text-white bg-black rounded-full' />
+                                Delivery
+                            </li>
+                            <li className='text-xl py-4 flex'>
+                                <MdOutlineFavorite size={25} className='mr-4 text-white bg-black rounded-full' />
+                                My Favorite
+                            </li>
+                            <li className='text-xl py-4 flex'>
+                                <FaGoogleWallet size={25} className='mr-4 text-white bg-black rounded-full' />
+                                My Wallet
+                            </li>
+                            <li className='text-xl py-4 flex'>
+                                <MdHelp size={25} className='mr-4 text-white bg-black rounded-full' />
+                                Help
+                            </li>
+                        </ul>
+                    </nav>
+                </h2>
+            </div>
         </div >
     )
 }
