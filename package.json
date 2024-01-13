@@ -28,6 +28,7 @@
       "react-app/jest"
     ]
   },
+  "homepage":"https://kuanslove.github.io/gh-pages",
   "browserslist": {
     "production": [
       ">0.2%",
