@@ -38,7 +38,9 @@ const TopNav = () => {
             </button>
             {
                 sideNav ? (
-                    <div className='bg-black/60 fixed w-full h-screen z-10 top-0 left-0' onClick={() => setSidenav(false)}></div>
+                    <div 
+                    className='bg-black/60 fixed w-full h-screen z-10 top-0 left-0' 
+                    onClick={() => setSidenav(false)}></div>
                 ) : ('')
             }
             <div className={
@@ -48,7 +50,7 @@ const TopNav = () => {
             }
             >
                 <AiOutlineClose onClick={() => setSidenav(false)} size={25} className='absolute top-4 right-4 cursor-pointer' />
-                <h2 className='text-2xl p-4'>Yum <span className='text-orange-700 font-bold'>Eat</span>
+                <h2 className='text-2xl p-4'>Yum<span className='text-orange-700 font-bold'>Eats</span>
                     <nav>
                         <ul className='flex flex-col p-4 text-gray-900'>
                             <li className='text-xl py-4 flex'>
